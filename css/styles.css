@@ -1,0 +1,83 @@
+.blue-eyes .eye-color {
+	fill: #175282;
+}
+
+.sad .mouth {
+	transform: rotate(180deg) scale(.5); /*shrink the mouth*/
+	transform-origin: 340px 390px; /*bring the mouth shape to the center alignment*/
+}
+
+/*animation*/
+@keyframes moveEyes { 
+	20% {
+		transform: translate(-18px, -20px); /* horizontal and vertical values*/
+	}
+
+	40% {
+		transform: translate(0, 0);	
+	}
+
+	65% {
+		transform: translate(18px, -20px);
+	}
+}
+
+.move-around .inner-eye-group {
+	animation: moveEyes 12s infinite; /*makes sure that the animation does not snap back after it is finisehd */
+
+}
+
+@keyframes leftWhiskers {
+	20% {
+		transform: rotate(5deg);
+	}
+
+	60% {
+		transform: rotate(-5deg);
+	}
+}
+.move-around .left-whiskers {
+	animation: leftWhiskers 3s infinite;
+	transform-origin: 325px 350px;
+}
+
+
+@keyframes rightWhiskers {
+	5% {
+		transform: rotate(-2deg);
+	}
+
+	90% {
+		transform: rotate(7deg);
+	}
+}
+.move-around .right-whiskers {
+	animation: rightWhiskers 3s infinite;
+	transform-origin: 325px 350px;
+}
+
+
+@keyframes move {
+	20% {
+		transform: rotateY(10deg) rotateX(10deg);
+	}
+
+	40% {
+		transform: rotateY(25deg) rotateX(10deg);
+	}
+
+	60% {
+		transform: rotateY(-10deg) rotateX(-10deg);
+	}
+
+	85% {
+		transform: rotateY(-10deg) rotateX(-16deg);
+	}
+}
+.move-around {
+	animation: move 9s infinite;
+}
+
+.svg-container {
+	perspective: 1000px/*useful for 3D rotations; indicate how close or far we are from the object that is rotating*/
+}
